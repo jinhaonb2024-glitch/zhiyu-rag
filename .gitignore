@@ -15,3 +15,5 @@ dist/
 *.egg-info/
 .DS_Store
 Thumbs.db
+output/pdf/知屿_RAG项目_术语与方法知识讲义.pdf
+output/report/知屿_RAG项目_术语与方法知识讲义.md
