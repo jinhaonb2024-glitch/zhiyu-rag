@@ -1,0 +1,28 @@
+[project]
+name = "personal-rag-knowledge-base"
+version = "1.0.0"
+description = "基于 LangChain、FAISS、Streamlit 的个人知识库问答系统"
+requires-python = ">=3.11,<3.14"
+dynamic = ["dependencies"]
+
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["rag*"]
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+extend-exclude = [".cache", ".venv", "data"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

@@ -1,0 +1,10 @@
+Python 与 Streamlit 开发笔记
+
+Python 虚拟环境
+使用 python -m venv .venv 创建独立环境，可以隔离不同项目的依赖。安装依赖时使用虚拟环境中的 python -m pip install -r requirements.txt，运行应用也使用同一个解释器。
+配置文件 .env 用于在本机管理模型名、服务地址和 API Key。不要把包含真实密钥的 .env 提交到代码仓库。
+
+Streamlit 问答界面
+Streamlit 可以用 Python 快速开发数据应用。st.file_uploader 接收上传文件，st.chat_input 接收问题，st.chat_message 展示对话，st.expander 展示参考片段。
+Streamlit 在用户操作时重新执行脚本。st.session_state 可以在当前浏览器会话中保存问答记录和活动索引，避免每次提问都重建向量库。
+本项目默认监听 127.0.0.1:8501，适合单用户本机演示。文档和索引保存在本地 data 目录，聊天记录只保存在当前浏览器会话中。
